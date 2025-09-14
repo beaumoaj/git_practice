@@ -45,6 +45,77 @@
 
       </google-codelab-step>
     
+      <google-codelab-step label="What is a Git repository?" duration="0">
+        <p>The <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories" target="_blank">GitHub Docs</a> says the following about repositories:</p>
+<aside class="special"><p> A repository is the most basic element of GitHub. It&#39;s a place where you can store your code, your files, and each file&#39;s revision history. Repositories can have multiple collaborators and can be either public or private.</p>
+</aside>
+<p>This is the repository we are going to use today: <a href="https://github.com/beaumoaj/git_practice" target="_blank">https://github.com/beaumoaj/git_practice</a>. When you follow the link, this is what you will see.</p>
+<p class="image-container"><img alt="The Repository in a web browser" src="img/ca0b7b2f14b963c0.png"></p>
+<p>To work on a repository you need to create a copy of the whole repository down to your local computer This is referred to as creating a <code>clone</code> of the repository. However this repository does not belong to you and so if you <code>clone</code> it you will not be able to save your changes back to the repository. To allow your changes to be saved, you must first <code>fork</code> the repository to your own GitGub account.</p>
+<p>To complete your CYF work, you will usually be starting from a <a href="https://github.com/codeyourfuture" target="_blank">CYF repository</a>. The usual process will be to:</p>
+<ol type="1">
+<li><code>fork</code> the original repository so you have a copy of it in <strong>your own GitHub account</strong>.</li>
+<li><code>clone</code> your copy of the repository back to <strong>your computer</strong>. Once the files are on your computer, you can edit them.</li>
+<li>Do some work in which you make changes to the files in the copy on your computer.</li>
+<li>Inform <code>git</code> which files you have changed using the <code>git add</code> command.</li>
+<li>Save a local snapshot of your updated files by using the <code>git commit</code> command.</li>
+<li>Upload your changes to the copy of the repository in your GitHub account using the <code>git push</code> command.</li>
+<li>Repeat steps 3 to 6 until you have finished met the success criteria for the work.</li>
+<li>Submit your work by submitting a <strong>pull request</strong>. A pull request will notify the owner of the <strong>original repository</strong> (which you forked) that you are sending them some changes to look at. CYF uses pull requests to keep track of work submitted by trainees. Volunteers will look at your pull requests and either approve (ie. you completed it correctly) or reject them (ie. you didn&#39;t meet the success criteria).</li>
+</ol>
+<aside class="special"><p>Terminology</p>
+<p><strong>fork</strong> copy a repository from some else&#39;s GitGub account to your own GitHub account.<br></p>
+<p><strong>clone</strong> copy a repository down to your own computer.</p>
+</aside>
+<p>Now we will step through the process and see who it works.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Forking a repository" duration="0">
+        <aside class="special"><p> Forking a repository means take an original repository from someone else&#39;s github account and make a new copy in your own github account.</p>
+</aside>
+<p>Open the repository <a href="https://github.com/beaumoaj/git_practice" target="_blank">https://github.com/beaumoaj/git_practice</a> in your web browser.</p>
+<p>Click on the <strong>Fork</strong> button and choose <strong>Create new fork</strong> as shown on the right hand side of this image: <img alt="Creating a fork" src="img/30e801f020375876.png"></p>
+<p>You will be shown the following form: <img alt="Form to specify the name of the copy" src="img/1b0c769d4f699b70.png"></p>
+<ol type="1">
+<li>You should ensure that the <strong>Owner</strong> field is set to your username.<br></li>
+<li>You can keep the suggested <strong>Repository name</strong> which will be used as the name of the repository in your github account.<br></li>
+<li>The <strong>Description</strong> field may already contain some suitable text, but if not you could write your own or edit the original. For example, you could write: <pre>This repository is part of Onboarding sprint 1
+</pre>
+</li>
+<li>Finally, click the <strong>Create fork</strong> button.</li>
+</ol>
+<p>When Github has finished making a copy of the repository, you will be shown the new copy in your account. You can tell the difference between the two repositories by checking the URL in the address bar of your browser. For example, if the URL https://<strong>github.com</strong>/<strong>CodeYourFuture</strong>/<strong>js-exercises</strong> (reading from right to left) tells me that this is a repository called <strong>js-exercises</strong> owned by a user called <strong>CodeYourFuture</strong> on <strong>github.com</strong>. If I fork it to my account, the new copy will have the URL https://github.com/<strong>beaumoaj</strong>/js-exercises. The difference is that the owner is now <strong>beaumoaj</strong>, which is my github user name. When you fork a repository, you should always check that you are working with <strong>your</strong> copy.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Cloning a repository" duration="0">
+        <aside class="special"><p> Cloning a repository means to select a github repository (usually) in your account and copy all the files down to your local computer.</p>
+</aside>
+<p>First, you need to have a <strong>directory</strong> (another name for <strong>folder</strong>) into which you can copy the repository. To keep track of all of your work for ITP, create a new <strong>directory</strong> called (for example) <code>CYF-ITP</code>. <strong>Inside</strong> that directory, create new sub-directory for each sprint. Your sub-directory could be called (for example) <code>Onboarding-Sprint1</code>.</p>
+<p>Now open the new folder in a terminal window. In a Linux computer press the <strong>Ctrl</strong> and <strong>ALT</strong> keys together (I will write this as <code>CTRL-ALT</code>) and then press the <code>t</code> key and a new terminal will open in your home folder. Now you need to change into your new directory using the <code>cd</code> command (you can remember <code>cd</code> as standing for Change Directory).</p>
+<pre><code language="language-bash" class="language-bash">cd ~/CYF-ITP/Onboarding-Sprint1
+</code></pre>
+<p>Here is an example from my computer: <img alt="Changing directory" src="img/4cea0ad1230f3639.png"></p>
+<p>Notice that the prompt to the left of the cursor will tell you which is the current directory.</p>
+<p>You can use the <code>ls</code> command to LiSt the files in the current directory. If you do that in your new directory you won&#39;t see any files. It should look like this: <img alt="Listing files" src="img/9f9d52e41e94b13c.png"></p>
+<p>Now lets <code>clone</code> the repository.</p>
+<p>If it is not already open, open your copy of the repository on GitHub in your web browser. Make sure you are starting from <strong>your copy of the repository</strong> (look for <strong>your username</strong> in the URL in your web browser). Click the green <strong>Code</strong> button and you will see the <strong>Clone</strong> options.</p>
+<p class="image-container"><img alt="Code button on GitHub" src="img/ff5463480ca96ef9.png"></p>
+<p>You need to select either <strong>HTTPS</strong>, or <strong>SSH</strong>, or <strong>GitHub CLI</strong> and the copy the URL from the box.</p>
+<aside class="special"><p>To use the <strong>SSH</strong> option, you must have set up <code>SSH</code> access (see <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank">https://docs.github.com/en/authentication/connecting-to-github-with-ssh</a>) before you can use that way of cloning a repository.</p>
+<p>To use the <strong>GitHub CLI</strong> you need to install the GitHub Command Line tools on your computer (see <a href="https://cli.github.com/" target="_blank">https://cli.github.com/</a>)</p>
+</aside>
+<p>We will use the <strong>HTTPS</strong> option. Select the <code>HTTPS</code> tab and copy the URL from the box. Now go to you terminal window and use the <code>git clone</code> command to clone the repository. The command is a version of the command shown below but the text <strong>YOUR_USERNAME</strong> should be replaced with whatever your username is on GitHub (you can anyway paste the URL after copying it from you repository)</p>
+<pre>git clone https://github.com/YOUR_USERNAME/git_practice.git
+</pre>
+<p>When you enter your version of the above command, you will get some messages printed to your terminal as the repository is copied down to your computer. If you use the <code>ls</code> command again, you should now see a new folder with the same name as the repository. On my computer it looks like this: <img alt="After cloning a repository" src="img/8c440a259ebee7f0.png"></p>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Project brief" duration="0">
         <p>Follow the instructions below to style the bio. Try looking up the CSS features you&#39;ll need in the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" target="_blank">MDN CSS reference</a>.</p>
 <h2 is-upgraded>Box styles</h2>

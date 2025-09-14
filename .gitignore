@@ -1,0 +1,22 @@
+#ignore editor back up files
+*~
+#ignore node modules
+node_modules/
+#ignore log files
+*.log
+#ignore environment variables file
+.env
+#ignore OS generated files
+.DS_Store
+Thumbs.db
+#ignore build output directories
+dist/
+build/
+#ignore coverage reports
+coverage/
+#ignore IDE specific files
+.vscode/
+.idea/
+#ignore temporary files
+tmp/
+temp/

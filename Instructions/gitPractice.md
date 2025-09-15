@@ -254,14 +254,19 @@ After we have committed our change to the title of the web page, we can once aga
 ```console
 [beaumoaj ~/git_practice]$ git status
 On branch master
-Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
-  (use "git pull" to update your local branch)
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
 
 nothing to commit, working tree clean
 [beaumoaj ~/git_practice]$
 ```
 
-It says we are on the `master` branch and that branch
+It says we are on the `master` branch and that branch is ahead of the `origin/master` meaning the version on github.com by one commit (that is the commit we just did). In order to update the version on github.com we can use the `git push` command. This will push our changes back out to the version of the repository on GitHub.com. Type the command in your terminal now:
+
+```console
+
+```
 
 ## Project brief
 

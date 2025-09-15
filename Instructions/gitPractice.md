@@ -353,3 +353,67 @@ Your finished example should end up looking something like this:
 ## Creating a pull request
 
 Now we will look at how to submit your work back to the CodeYourFuture GitHub account for someone to review.
+
+I have completed the project, here is a view of my web page displayed in the Live Server:
+![Completed Web Page with styling](./images/completeExercise.png)
+
+A pull request is a concept belonging to GitHub and is not part of git.
+
+To start a new pull request first make sure you have run `git commit` and `git push` to ensure that the repository on your GitHub account is up to date with all of your changes. Then open your GitHub repository in your web browser (or reload the page if it is already open to ensure you are seeing the most recent version).
+
+Here is my version of the repository on GitHub:
+
+![Completed exercise on GitHub](./images/TonyCYF_Complete.png)
+
+We can notice the following things:
+
+1.  I just now comitted and pushed changes to style.css according to the message shown next to the `Starter` directory.
+1.  My copy of the repository is 2 commits ahead of the original repository (the one I initially forked).
+1.  I have completed the work so I can start a pull request by clicking on the `Pull requests` tab.
+
+Click on your `Pull requests` tab and you should see the following screen.
+![GitHub Pull Requests](./images/pullRequestScreen.png)
+
+Click the `New pull request` button and you will see a screen comparing the changes between your version and the original version of the repository:
+![Comparing changes](./images/pullCompareChanges.png)
+
+Have a look at those changes. If there are success criteria for the exercise, check one last time that you have met them all. Once you are happy, click the `Create pull request` button. You will be taken to the following form:
+
+![new pull request](./images/newPullRequest.png)
+
+Most CYF exercises will have a template in the description, so I have copied the template into my description here. The `Title` of the pull request should follow the format:
+
+```console
+Region | Cohort | My Name | Sprint x | Task name
+```
+
+The template has a check list. You get one more chance to check everything before you submit.
+
+I everything is good, click the green `Create pull request` button. You will see the pull request appear on the original repository:
+
+![the new pull request on the original repository](./images/newPullRequest.png)
+
+If this was a proper exercise to be submitted, a volunteer would look at your pull request, they would check the changes to the files that you submitted and then give you some feedback.
+
+## Summary
+
+We have seen
+
+- how to fork and clone repositories
+- how to add and commit changes
+- how to push new versions back to GitHub
+- how to create a new pull request to submit some work.
+
+### What we haven't covered:
+
+- Git branches. There was an exercise on branching in the prep for Sprint 1: [https://programming.codeyourfuture.io/onboarding/sprints/1/prep/#branching](https://programming.codeyourfuture.io/onboarding/sprints/1/prep/#branching). If you didn't do that before, go and complete it now. Branches allow us to do some development on a particular part of the project (for example, one exercise in the backlog). You will almost always need to create a new branch for each exercise you complete and the pull request should be created for that branch.
+
+* Git in VS code. Code has a user interface for git built into it. If you don't like using the terminal to enter commands, you can use the interface in VS Code. Here is the version control panel open in my version of VS Code:
+  ![Git in VS Code](./images/gitInCode.png)
+  I would advise you to look at the documentation for source control in VS Code if you plan to use that interface. You can find that here: [https://code.visualstudio.com/docs/sourcecontrol/overview](https://code.visualstudio.com/docs/sourcecontrol/overview)
+
+### Further reading
+
+You can find more information and examples in the GitPro book which you will find here: [https://git-scm.com/book/en/v2](https://git-scm.com/book/en/v2)
+
+There is a playlist called "GitHub for Beginners" on YouTube: [https://www.youtube.com/playlist?list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f](https://www.youtube.com/playlist?list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f)

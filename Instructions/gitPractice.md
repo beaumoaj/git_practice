@@ -247,6 +247,22 @@ The `-m` in the command above means "and the message is..." and we follow the `-
 
 The output is telling us that 1 file changed, we inserted some text (our name) and we deleted some text (Jane Doe's name).
 
+### The `git push` command
+
+After we have committed our change to the title of the web page, we can once again issue the `git status` command. If you do that now you will see some output a like the following:
+
+```console
+[beaumoaj ~/git_practice]$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+[beaumoaj ~/git_practice]$
+```
+
+It says we are on the `master` branch and that branch
+
 ## Project brief
 
 Follow the instructions below to style the bio. Try looking up the CSS features you'll need in the [MDN CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).

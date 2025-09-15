@@ -387,9 +387,28 @@ Most CYF exercises will have a template in the description, so I have copied the
 Region | Cohort | My Name | Sprint x | Task name
 ```
 
-The template has a check list. You get one more chance to check everything before you submit.
+The template for a pull request has a number of things for you to complete. You get one more chance to check everything before you submit. Here is a sample description following the usual template:
 
-I everything is good, click the green `Create pull request` button. You will see the pull request appear on the original repository:
+```console
+Learners, PR Template
+
+Self checklist
+
+-  I have titled my PR with Region | Cohort | FirstName LastName | Sprint | Assignment Title
+-  My changes meet the requirements of the task
+-  I have tested my changes
+-  My changes follow the [style guide](https://curriculum.codeyourfuture.io/guides/reviewing/style-guide/)
+
+Changelist
+
+- I have completed the Git Practice Workshop of sprint 1
+
+Questions
+
+I could ask a question here for the reviewer if I wanted to
+```
+
+If everything is good, click the green `Create pull request` button. You will see the pull request appear on the original repository:
 
 ![the new pull request on the original repository](./images/newPullRequest.png)
 

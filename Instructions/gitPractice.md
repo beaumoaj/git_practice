@@ -265,8 +265,56 @@ nothing to commit, working tree clean
 It says we are on the `master` branch and that branch is ahead of the `origin/master` meaning the version on github.com by one commit (that is the commit we just did). In order to update the version on github.com we can use the `git push` command. This will push our changes back out to the version of the repository on GitHub.com. Type the command in your terminal now:
 
 ```console
-
+[beaumoaj ~/git_practice]$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 405 bytes | 405.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:beaumoaj/git_practice.git
+   71d4cd5..43eb47f  master -> master
+[beaumoaj ~/git_practice]$
 ```
+
+This tells us that `git` is packaging up the change we made and writing it back to github.com. The last two lines say it is sending it to `github.com:beaumoaj/git_practice.git` which is the original repository on github.com and the data being sent is from our local master branch back to the origin's master branch.
+
+If you open your github.com repository in your web browser (or refresh the page if it is already open), navigate into the `Starter` folder and click on `index.html`, you will see that this version is now the same as you have on your computer. It contains your name in the header.
+
+## Summary so far
+
+So far you have done the following set of actions:
+
+1.  **Forked** someone else's git repository to make a copy in your GitHub account.
+1.  **Cloned** your copy of that repository down to your local computer
+1.  Did some work on editing the files (in fact we only made one change, but that is enough for this example).
+1.  **Added** our changes using the `git add` command
+1.  **Made a snapshot** (a new version) of the repository using `git commit`
+1.  **Pushed** the new version back to the source copy on GitHub using the `git push` command.
+
+> aside positive
+>
+> Usually we will make more than one change before creating a new version with `git commit`. However there are no rules on this and we can `add` and `commit` as often as we like. We should `push` our work back to GitHub regularly.
+
+### More tasks
+
+To practice what we just did, here are some more tasks for you to do. Complete them all and then `add` the changes, `commit` them to make a new version and `push` that new version back to GitHub.
+
+1.  Find the job title on the web page and change it to `CodeYourFuture Trainee`
+1.  Find the email address and change it to your email address
+1.  Find the Web link and change it to point to the ITP syllabus page which is [https://programming.codeyourfuture.io/](https://programming.codeyourfuture.io/). Check than the link goes to the right place when you click on it. If you have installed the **CYF extensions to VS Code**, you should be able to right click on the `index.html` in the `Starter` folder and choose `Open with Live Server` to see the web page.
+
+> aside positive
+>
+> To install the CYF extension pack to VS code,
+>
+> - click on the Extansions icon on the left (its highlighted in the image below),
+> - type `codeyourfuture` in the search bar,
+> - select the extension and click `install`. Its already installed for me so I see options to `disable` or `uninstall` it.
+>
+> ![CYF Extension Pack](./images/CYF_ExtensionPack.png)
+
+When you are sure you have done everything above, go on to the next page which gives you an exercise to add CSS styling to the web page. Be sure to `add`, `commit` and `push` your changes every time you complete one of the steps.
 
 ## Project brief
 
@@ -301,3 +349,7 @@ Follow the instructions below to style the bio. Try looking up the CSS features 
 Your finished example should end up looking something like this:
 
 ![Example Solution](./images/SolutionExample.png)
+
+## Creating a pull request
+
+Now we will look at how to submit your work back to the CodeYourFuture GitHub account for someone to review.

@@ -187,6 +187,63 @@ Changes to be committed:
 [beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$
 </pre>
 <p>The output is telling us that 1 file changed, we inserted some text (our name) and we deleted some text (Jane Doe&#39;s name).</p>
+<h2 is-upgraded>The <code>git push</code> command</h2>
+<p>After we have committed our change to the title of the web page, we can once again issue the <code>git status</code> command. If you do that now you will see some output a like the following:</p>
+<pre>[beaumoaj ~/git_practice]$ git status
+On branch master
+On branch master
+Your branch is ahead of &#39;origin/master&#39; by 1 commit.
+  (use &#34;git push&#34; to publish your local commits)
+
+nothing to commit, working tree clean
+[beaumoaj ~/git_practice]$
+</pre>
+<p>It says we are on the <code>master</code> branch and that branch is ahead of the <code>origin/master</code> meaning the version on github.com by one commit (that is the commit we just did). In order to update the version on github.com we can use the <code>git push</code> command. This will push our changes back out to the version of the repository on GitHub.com. Type the command in your terminal now:</p>
+<pre>[beaumoaj ~/git_practice]$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 405 bytes | 405.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:beaumoaj/git_practice.git
+   71d4cd5..43eb47f  master -&gt; master
+[beaumoaj ~/git_practice]$
+</pre>
+<p>This tells us that <code>git</code> is packaging up the change we made and writing it back to github.com. The last two lines say it is sending it to <code>github.com:beaumoaj/git_practice.git</code> which is the original repository on github.com and the data being sent is from our local master branch back to the origin&#39;s master branch.</p>
+<p>If you open your github.com repository in your web browser (or refresh the page if it is already open), navigate into the <code>Starter</code> folder and click on <code>index.html</code>, you will see that this version is now the same as you have on your computer. It contains your name in the header.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Summary so far" duration="0">
+        <p>So far you have done the following set of actions:</p>
+<ol type="1">
+<li><strong>Forked</strong> someone else&#39;s git repository to make a copy in your GitHub account.</li>
+<li><strong>Cloned</strong> your copy of that repository down to your local computer</li>
+<li>Did some work on editing the files (in fact we only made one change, but that is enough for this example).</li>
+<li><strong>Added</strong> our changes using the <code>git add</code> command</li>
+<li><strong>Made a snapshot</strong> (a new version) of the repository using <code>git commit</code></li>
+<li><strong>Pushed</strong> the new version back to the source copy on GitHub using the <code>git push</code> command.</li>
+</ol>
+<aside class="special"><p>Usually we will make more than one change before creating a new version with <code>git commit</code>. However there are no rules on this and we can <code>add</code> and <code>commit</code> as often as we like. We should <code>push</code> our work back to GitHub regularly.</p>
+</aside>
+<h2 is-upgraded>More tasks</h2>
+<p>To practice what we just did, here are some more tasks for you to do. Complete them all and then <code>add</code> the changes, <code>commit</code> them to make a new version and <code>push</code> that new version back to GitHub.</p>
+<ol type="1">
+<li>Find the job title on the web page and change it to <code>CodeYourFuture Trainee</code></li>
+<li>Find the email address and change it to your email address</li>
+<li>Find the Web link and change it to point to the ITP syllabus page which is <a href="https://programming.codeyourfuture.io/" target="_blank">https://programming.codeyourfuture.io/</a>. Check than the link goes to the right place when you click on it. If you have installed the <strong>CYF extensions to VS Code</strong>, you should be able to right click on the <code>index.html</code> in the <code>Starter</code> folder and choose <code>Open with Live Server</code> to see the web page.</li>
+</ol>
+<aside class="special"><p>To install the CYF extension pack to VS code,</p>
+<ul>
+<li>click on the Extansions icon on the left (its highlighted in the image below),</li>
+<li>type <code>codeyourfuture</code> in the search bar,</li>
+<li>select the extension and click <code>install</code>. Its already installed for me so I see options to <code>disable</code> or <code>uninstall</code> it.</li>
+</ul>
+<p class="image-container"><img alt="CYF Extension Pack" src="img/69d2c9bd13d74625.png"></p>
+</aside>
+<p>When you are sure you have done everything above, go on to the next page which gives you an exercise to add CSS styling to the web page. Be sure to <code>add</code>, <code>commit</code> and <code>push</code> your changes every time you complete one of the steps.</p>
 
 
       </google-codelab-step>
@@ -219,6 +276,12 @@ Changes to be committed:
 <h2 is-upgraded>Example</h2>
 <p>Your finished example should end up looking something like this:</p>
 <p class="image-container"><img alt="Example Solution" src="img/f7fd17a086a85c5d.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating a pull request" duration="0">
+        <p>Now we will look at how to submit your work back to the CodeYourFuture GitHub account for someone to review.</p>
 
 
       </google-codelab-step>

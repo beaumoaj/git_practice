@@ -320,6 +320,12 @@ When you are sure you have done everything above, go on to the next page which g
 
 Follow the instructions below to style the bio. Try looking up the CSS features you'll need in the [MDN CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
 
+There is a task like this in the backlog for Onboarding Sprint 1.
+
+> aside positive
+>
+> To save time, we will "cheat" here and copy the solution from `style.css` in the `Exercise` folder into the `style.css` in the `Starter` folder.
+
 ### Box styles
 
 1. Give the `&lt;body&gt;` element a padding of `20px` on all sides and a width of `500px`.

@@ -111,7 +111,82 @@
 <p>We will use the <strong>HTTPS</strong> option. Select the <code>HTTPS</code> tab and copy the URL from the box. Now go to you terminal window and use the <code>git clone</code> command to clone the repository. The command is a version of the command shown below but the text <strong>YOUR_USERNAME</strong> should be replaced with whatever your username is on GitHub (you can anyway paste the URL after copying it from you repository)</p>
 <pre>git clone https://github.com/YOUR_USERNAME/git_practice.git
 </pre>
-<p>When you enter your version of the above command, you will get some messages printed to your terminal as the repository is copied down to your computer. If you use the <code>ls</code> command again, you should now see a new folder with the same name as the repository. On my computer it looks like this: <img alt="After cloning a repository" src="img/8c440a259ebee7f0.png"></p>
+<p>When you enter your version of the above command, you will get some messages printed to your terminal as the repository is copied down to your computer. If you use the <code>ls</code> command again, you should now see a new folder with the same name as the repository. On my computer it looks like this. The new folder is called <code>git_practice</code>: <img alt="After cloning a repository" src="img/8c440a259ebee7f0.png"></p>
+<p>Now open your new git project in VS Code. The quickest way to do that is via the same terminal window you used above and type the following two commands:</p>
+<pre>cd git_practice
+code .
+</pre>
+<p>VS code should open displaying the new repository. It looks like this on my computer:</p>
+<p class="image-container"><img alt="The project in VS Code" src="img/b0d106e1ab1b319c.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Do some work and use Git" duration="0">
+        <p>We will now work in VS code. If you opened the repository directory in VS Code, expand the <code>Starter</code> directory and open the <code>index.html</code> file from that directory. It looks like this in my computer: <img alt="The Starter index.html file in Code" src="img/46654d44a5f5666b.png">.</p>
+<p>From the VS Code menu bar, select <strong>Terminal</strong> and then <strong>New Terminal</strong> and a new terminal window will appear inside VS Code below the HTML file. This terminal is just like the other terminal window you used in the previous step. You can type <code>ls</code> in the terminal window and you should see the same list of files and directories as you see in the <strong>Explorer</strong> panel. Here it is in my computer:</p>
+<p class="image-container"><img alt="VS Code with after typing ls in the terminal" src="img/58d75091832cefd7.png"></p>
+<p>We will use this terminal window to run Git commands as we work.</p>
+<h2 is-upgraded>The <code>git status</code> command</h2>
+<p>Before we do anything we will look at the <code>git status</code> command. In your terminal window type:</p>
+<pre>git status
+</pre>
+<p>You should see a response something like this:</p>
+<pre>[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$ git status
+On branch master
+Your branch is up-to-date with &#39;origin/master&#39;.
+
+nothing to commit, working tree clean
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$
+</pre>
+<p>This is telling us we are working on a <strong>branch</strong> called <code>master</code>. This is a the master copy of the project. It also tells us &#34;nothing to commit, working tree clean&#34;. This means we haven&#39;t yet made any changes.</p>
+<p>Now we will make a change and see the effect.</p>
+<p>In your <code>index.html</code> look for the following line:</p>
+<pre><code language="language-html" class="language-html">&lt;h1&gt;Jane Doe&lt;/h1&gt;
+</code></pre>
+<p>Edit the file to change the name from <strong>Jane Doe</strong> to your own name. When you have done that, rerun the <code>git status</code> command in the console window. You should see somethin glike the following text:</p>
+<pre>[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$ git status
+On branch master
+Your branch is up-to-date with &#39;origin/master&#39;.
+
+Changes not staged for commit:
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git restore &lt;file&gt;...&#34; to discard changes in working directory)
+        modified:   Starter/index.html
+
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$
+</pre>
+<p>This tells us that there are changes to the files. Specifically, that we have modified <code>Starter/index.html</code>. It also tells us that no changes have been added to commit. It suggests we use <code>git add</code> to do that.</p>
+<h2 is-upgraded>The <code>git add</code> command</h2>
+<p>We have made a change to the file called <code>Starter/index.html</code> (this is the path to the file, <code>Starter</code> is the directory name and <code>index.html</code> is the name of the file that changed).</p>
+<p>We need to stage the change (meaning we are informing git of the changes). In your terminal window type:</p>
+<pre>git add Starter/index.html
+</pre>
+<p>You should not see any output after running that command. Now re-run the <code>git status</code> command. Here are the two commands in my terminal.</p>
+<pre>[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$ git add Starter/index.html
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$ git status
+On branch master
+Your branch is up-to-date with &#39;origin/master&#39;.
+
+Changes to be committed:
+  (use &#34;git restore --staged &lt;file&gt;...&#34; to unstage)
+        modified:   Starter/index.html
+
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$
+</pre>
+<p>The <code>git status</code> output tells us we now have changes to be committed and tells us which file has been modified.</p>
+<h2 is-upgraded>The <code>git commit</code> command</h2>
+<p>We can tell git to make a note of the current version of the project using the <code>git commit</code> command. We need to add a message to the commit to explain what changes have been made in this version. Our message in this case should say we changed the name in the heading to be our own name. Here is the command:</p>
+<pre>git commit -m &#34;Changed the name in the header to be my name&#34;
+</pre>
+<p>The <code>-m</code> in the command above means &#34;and the message is...&#34; and we follow the <code>-m</code> with a space and then the message in double-quotes. Here is the output in my computer:</p>
+<pre>[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$ git commit -m &#34;Changed the name in the header to be my name&#34;
+[master 1a09007] Changed the name in the header to be my name
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$
+</pre>
+<p>The output is telling us that 1 file changed, we inserted some text (our name) and we deleted some text (Jane Doe&#39;s name).</p>
 
 
       </google-codelab-step>

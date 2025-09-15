@@ -131,6 +131,122 @@ git clone https://github.com/YOUR_USERNAME/git_practice.git
 When you enter your version of the above command, you will get some messages printed to your terminal as the repository is copied down to your computer. If you use the `ls` command again, you should now see a new folder with the same name as the repository. On my computer it looks like this. The new folder is called `git_practice`:
 ![After cloning a repository](./images/afterClone.png)
 
+Now open your new git project in VS Code. The quickest way to do that is via the same terminal window you used above and type the following two commands:
+
+```console
+cd git_practice
+code .
+```
+
+VS code should open displaying the new repository. It looks like this on my computer:
+
+![The project in VS Code](./images/projectInCode.png)
+
+## Do some work and use Git
+
+We will now work in VS code. If you opened the repository directory in VS Code, expand the `Starter` directory and open the `index.html` file from that directory. It looks like this in my computer:
+![The Starter index.html file in Code](./images/indexHtmnlInCode.png).
+
+From the VS Code menu bar, select **Terminal** and then **New Terminal** and a new terminal window will appear inside VS Code below the HTML file. This terminal is just like the other terminal window you used in the previous step. You can type `ls` in the terminal window and you should see the same list of files and directories as you see in the **Explorer** panel. Here it is in my computer:
+
+![VS Code with after typing ls in the terminal](./images/codeWithTerminal.png)
+
+We will use this terminal window to run Git commands as we work.
+
+### The `git status` command
+
+Before we do anything we will look at the `git status` command. In your terminal window type:
+
+```console
+git status
+```
+
+You should see a response something like this:
+
+```console
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working tree clean
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$
+```
+
+This is telling us we are working on a **branch** called `master`. This is a the master copy of the project.
+It also tells us "nothing to commit, working tree clean". This means we haven't yet made any changes.
+
+Now we will make a change and see the effect.
+
+In your `index.html` look for the following line:
+
+```html
+<h1>Jane Doe</h1>
+```
+
+Edit the file to change the name from **Jane Doe** to your own name. When you have done that, rerun the `git status` command in the console window. You should see somethin glike the following text:
+
+```console
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Starter/index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$
+```
+
+This tells us that there are changes to the files. Specifically, that we have modified `Starter/index.html`. It also tells us that no changes have been added to commit. It suggests we use `git add` to do that.
+
+### The `git add` command
+
+We have made a change to the file called `Starter/index.html` (this is the path to the file, `Starter` is the directory name and `index.html` is the name of the file that changed).
+
+We need to stage the change (meaning we are informing git of the changes). In your terminal window type:
+
+```console
+git add Starter/index.html
+```
+
+You should not see any output after running that command. Now re-run the `git status` command. Here are the two commands in my terminal.
+
+```console
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$ git add Starter/index.html
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Starter/index.html
+
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$
+```
+
+The `git status` output tells us we now have changes to be committed and tells us which file has been modified.
+
+### The `git commit` command
+
+We can tell git to make a note of the current version of the project using the `git commit` command. We need to add a message to the commit to explain what changes have been made in this version. Our message in this case should say we changed the name in the heading to be our own name. Here is the command:
+
+```console
+git commit -m "Changed the name in the header to be my name"
+```
+
+The `-m` in the command above means "and the message is..." and we follow the `-m` with a space and then the message in double-quotes. Here is the output in my computer:
+
+```console
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$ git commit -m "Changed the name in the header to be my name"
+[master 1a09007] Changed the name in the header to be my name
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[beaumoaj ~/CYF-ITP/Onboarding-Sprint1/git_practice]$
+```
+
+The output is telling us that 1 file changed, we inserted some text (our name) and we deleted some text (Jane Doe's name).
+
 ## Project brief
 
 Follow the instructions below to style the bio. Try looking up the CSS features you'll need in the [MDN CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
